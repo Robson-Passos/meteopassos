@@ -1,0 +1,119 @@
+<aside class="blog-sidebar mt-6">
+
+    <!-- div com as redes sociais-->
+    <div align="center" class="icon-list" style="font-size:14pt;"> 
+        <a href="#instagram" class="instagram"> 
+            <i class="fab fa-instagram"></i> 
+        </a> 
+                            
+        <a href="#twitter" class="twitter"> 
+            <i class="fab fa-twitter"></i> 
+        </a> 
+          
+        <a href="#linkedin" class="linkedin"> 
+            <i class="fab fa-linkedin"></i> 
+        </a> 
+
+        <a href="#linkedin" class="linkedin"> 
+            <i class="fab fa-github"></i>
+        </a> 
+
+        <a href="#linkedin" class="linkedin"> 
+            <i class="fab fa-whatsapp"></i>
+        </a> 
+          
+        <!--<a href="#google" class="google"> 
+            <i class="fab fa-google"></i> 
+        </a>--> 
+          
+        <a href="#youtube" class="youtube"> 
+            <i class="fab fa-youtube"></i> 
+        </a> 
+
+        <a href="#facebook" class="facebook"> 
+            <i class="fab fa-facebook"></i> 
+        </a>
+
+        <a href="#facebook" class="compartilhar"> 
+            <i class="fas fa-share-alt-square"></i>
+        </a>   
+    
+    </div> 
+    
+    <hr>
+
+    <!-- div para doar para o blog -->
+    <div class="p-3 mb-3 bg-light rounded shadow-sm">
+        <h4><i class="fas fa-donate"></i> Ajude o Blog</h4>
+        <p class="mb-0">Encontrou alguma informação útil por aqui? Considere fazer uma doação, isso nos ajudará para que possamos ajudar outras pessoas <i class="far fa-smile-wink"></i></p>
+        <br>
+        <a href="#" class="btn btn-primary">Eu quero doar!</a>
+    </div>
+
+    <!-- div com um banner de propaganda -->
+    <div align="center" class="p-3 bg-light shadow-sm">
+        <h6>Quer aprender Python? Então confira:</h6>
+        <a href="https://go.hotmart.com/Y19210274Y" target="_blank"><img src="https://i.imgur.com/DClUiUD.jpg"></a>
+    </div>
+
+    <br>
+
+    <!-- div com todas as tags do blog -->
+    <div class="p-3 bg-light rounded shadow-sm">   
+        <h4><i class="fas fa-tags"></i> Todas as tags: </h4>            
+        {% for mt in all_tags %}
+        <div class="d-inline-block">
+            <form role='form' action="{% url 'tag' %}" method='GET'> 
+                {% csrf_token %}
+                <input type="submit" class="btn btn-sm btn-outline-secondary mr-1 py-0" style="font-size: 0.8em;" value="{{ mt }}" name="tag">
+            </form>
+        </div>
+        {% endfor %}                              
+    </div>
+
+    <br>
+
+    <!-- div com a barra de arquivos do blog -->
+    <div class="p-3 bg-light rounded shadow-sm">
+        <h4><i class="fas fa-folder"></i> Arquivo: </h4>
+
+        <nav class="navbar2 navbar-expand-sm navbar-light ">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">         
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+                    {% regroup posts by created_at.year as year_list %}
+                    
+                    {% for year in year_list %}
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{year.grouper}}
+                            </a>
+
+                            <ul class="dropdown-menu dropleft" aria-labelledby="navbarDropdownMenuLink">
+                                {% regroup year.list by created_at.month as month_list %}
+                                {% for month in month_list %}
+                                    <li class="dropdown-submenu top"><a class="dropdown-item dropdown-toggle" data-toggle="dropdown" href="#">{{ month.list.0.created_at|date:'M' }} ({{ month.list|length }})</a>
+                                        <div class="dropdown-menu">
+                                            {% for month_posts in month.list %}           
+                                                <a class="dropdown-item" href="#">{{month_posts}}</a>
+                                            {% endfor %} 
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>   
+                        </li>
+
+                    {% endfor %}
+                </ul>
+            </div>
+        </nav>
+
+    </div>
+
+</aside><!-- /.blog-sidebar -->

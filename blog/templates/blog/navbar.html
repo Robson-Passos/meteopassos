@@ -1,0 +1,71 @@
+<!--Essa navbar vai ser incluida em todos os templates-->
+<nav class="navbar navbar-expand-md navbar-dark bg-secondary sticky-top">
+    
+    <a class="navbar-brand" href="{% url 'blog_index' %}">METEOPASSOS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'blog_index' %}"> <i class="fas fa-home"></i> HOME <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-list-ul"></i> CATEGORIAS</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <a class="dropdown-item" href="{% url 'tutorial' %}"><i class="fa fa-book"></i> TUTORIAIS</a>
+                <a class="dropdown-item" href="{% url 'article' %}"><i class="fas fa-file-alt"></i> ARTIGOS</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-laptop"></i> SITES ÚTEIS</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <h6 class="dropdown-header">Previsão do tempo</h6>
+                <a class="dropdown-item" href="https://www.cptec.inpe.br/">CPTEC</a>
+                <a class="dropdown-item" href="#">INMET</a>
+                <a class="dropdown-item" href="http://www.atmos.albany.edu/student/abentley/realtime/subtrop.php?domain=southamer&variable=mslp_jet">Previsões do GFS</a>
+                <a class="dropdown-item" href="#">SOS Chuva</a>
+                
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Radiossondagens</h6>
+                <a class="dropdown-item" href="http://weather.uwyo.edu/upperair/sounding.html">Radiossondagens (University of Wyoming)</a>
+                
+
+
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Satélite</h6>
+                <a class="dropdown-item" href="http://realearth.ssec.wisc.edu/">Realearth</a>
+                
+
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">Educação</h6>
+                <a class="dropdown-item" href="https://www.meted.ucar.edu/index.php">Comet MetEd</a>
+                <a class="dropdown-item" href="https://cloudatlas.wmo.int/home.html">Atlas de nuvens WMO</a>
+                </div>
+
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'blog_autor' %}"><i class="fas fa-user-alt"></i> SOBRE O AUTOR</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'subscription' %}" target="_blank" style="color: deepskyblue;">
+                <i class="fa fa-send"></i> INSCRIÇÃO
+                </a>
+            </li>
+
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}">
+            <input class="form-control mr-1" type="text" placeholder="O que procura?" aria-label="Buscar" name="search">
+            <button class="btn btn-outline-light my-2 my-sm-0 mr-2" type="submit">Buscar</button>
+        </form>
+    
+    </div>
+
+</nav>

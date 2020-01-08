@@ -1,0 +1,167 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Incluindo a barra de navegação -->
+{% include 'blog/navbar.html' %}
+
+<div class="container" width="976">
+<br>
+    <div class="media">
+        <img src="{% static 'img/perfil.png' %}" class="mr-3" width="20%" alt="Foto perfil">
+        <div class="media-body">
+            <h5 class="mt-0">Robson Barreto dos Passos</h5>
+            
+            <p>
+                Sou graduado em Ciências Atmosféricas pela Universidade Federal de Itajubá (UNIFEI), concluí o curso em 2019. Antes disso, eu completei um curso técnico em Controle Ambiental pelo 
+            Centro Educacional Limassis. Gosto de encontrar soluções para os problemas e criar ferramentas que 
+            facilitem o trabalho. Sou adepto da filosofia <i>open-source</i>, acredito que compartilhando conhecimentos e recursos é possível tornar o mundo um lugar melhor.
+            </p>
+            
+            <p><small>Robson B. Passos</small></p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <h4 class="panel-title" style="color: black;"><em class="fa fa-caret-right fa-fw"></em>Habilidades</h4>
+          </button>
+        </h5>
+      </div>
+  
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+            <div class="media">
+                <img src="{% static 'img/python.png' %}" class="mr-3" width="5%" alt="...">
+                <div class="media-body">
+                    <h5 class="mt-0">Python</h5>
+                     Python 3x: numpy, matplotlib, cartopy, scipy, xarray, Jupyter Notebook/Lab, Anaconda, visualização de dados. 
+                     Python é minha linguagem de programação favorita, utilizo ela para quase tudo.
+                </div>
+            </div>
+            <br>
+            <div class="media">
+                <img src="{% static 'img/Matlab-icon.png' %}" class="mr-3" width="5%" alt="...">
+                <div class="media-body">
+                    <h5 class="mt-0">Matlab</h5>
+                    Matlab para análise e visualização de dados. 
+                </div>
+            </div>
+            <br>
+            <div class="media">
+                <img src="{% static 'img/Opengrads.png' %}" class="mr-3" width="5%" alt="...">
+                <div class="media-body">
+                    <h5 class="mt-0">Open GRADS</h5>
+                    Open GRADS para acessar, manipular e visualizar dados espaciais. 
+                </div>
+            </div>
+            <br>
+            <div class="media">
+                <img src="{% static 'img/QGIS.png' %}" class="mr-3" width="5%" alt="...">
+                <div class="media-body">
+                    <h5 class="mt-0">QGIS</h5>
+                    Criação de mapas, análises espaciais, geoprocessamento e visualização de dados geográficos.
+                </div>
+            </div>
+            <br>
+            <div class="media">
+                <img src="{% static 'img/Linux.png' %}" class="mr-3" width="5%" alt="...">
+                <div class="media-body">
+                    <h5 class="mt-0">Linux</h5>
+                    Sistema operacional, comandos do Bash e Shell script. 
+                </div>
+            </div>
+            <br>
+            <div class="media">
+                <img src="{% static 'img/microsoft.png' %}" class="mr-3" width="5%" alt="...">
+                <div class="media-body">
+                    <h5 class="mt-0">Microsoft</h5>
+                    Windows, Office 365 e VSCode.
+                </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <h4 class="panel-title" style="color: black;"><em class="fa fa-caret-right fa-fw"></em>Publicações</h4>
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">           
+            <a href="https://periodicos.sbu.unicamp.br/ojs/index.php/td/article/view/8653308">1. PASSOS, ROBSON; PREISSER, GUILHERME ; REBOITA, MICHELLE ; MATTOS, ENRIQUE . Caracterização de um sistema convectivo de mesoescala por meio de sistema de informações geográficas. <b>REVISTA TERRAE DIDATICA</b>, v. 15, p. e019010, 2019.</a>
+            <br><hr>
+            <a href="http://www.scielo.br/scielo.php?script=sci_arttext&pid=S0102-77862019000200227&tlng=pt">2. ASSIREU, ARCILAN T. ; MENDONÇA, JOSÉ C. ; FREITAS, RAMON M. ; PASSOS, ROBSON B. ; PELLEGRINI, CLÁUDIO C. ; PIMENTA, FELIPE M. . Escoamento Atmosférico sobre uma Colina Isolada Revelado a Partir de Dados de um Veículo Aéreo não Tripulado (VANT). <b>REVISTA BRASILEIRA DE METEOROLOGIA</b>, v. 34, p. 227-236, 2019.</a>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" aria-pressed="false">
+            <h4 class="panel-title" style="color: black;"><i class="fa fa-caret-right fa-fw"></i>Objetivos profissionais</h4>
+          </button>
+        </h5>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body">
+          Almejo atuar como meteorologista. Recebi uma formação muito boa durante a minha graduação e sempre busquei aperfeiçoar meus conhecimentos por conta própria. Acredito que tenho muito
+          a acrescentar como meteorologista e, além disso, tenho muita facilidade em aprender e massificar assuntos novos.
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <br>
+
+  
+    <div align="center">
+        <a href="mailto:robsonbarretodospassos@gmail.com">
+            <b><i class="fa fa-envelope" style="color: brown; font-size: 18pt;"></i> <span style="color: brown; font-size: 22pt;">robsonbarretodospassos@gmail.com</span></b></a>
+    </div>
+
+    <br>
+
+    <div align='center'>
+        <a href="https://www.linkedin.com/in/robson-barreto-7a127112b/" target="_blank">
+            <img align="center" src="http://icons.iconarchive.com/icons/danleech/simple/72/linkedin-icon.png" width="55px" height="55px" title="LinkedIN"></a>
+        <a href="https://github.com/Robson-Passos" target="_blank">
+            <img align="center" src="{% static 'img/github.png' %}" width="55px" height="55px" title="GitHub"></a>
+         <a href="#">
+            <img align="center" src="{% static 'img/tweet.png' %}" width="55px" height="55px" title="twitter"></a>
+        <a href="#" target= "_blank">
+            <img align="center" src="{% static 'img/youtube-icon.png' %}" width="55px" height="55px" title="Youtube"></a>
+        <a href="https://orcid.org/0000-0002-3798-5953">
+            <img align="center" src="{% static 'img/orcid.png' %}" width="55px" height="55px" title="Orcid ID"></a>
+        <a href="#" target= "_blank">
+            <img align="center" src="{% static 'img/facebook-icon.png' %}" width="55px" height="55px" title="Facebook"></a>
+        <a href="#" target= "_blank">
+            <img align="center" src="{% static 'img/instagram-icon.png' %}" width="55px" height="55px" title="Instagram"></a>
+        <a href="http://lattes.cnpq.br/9259340578556316" target= "_blank">  
+            <img align="center" src="{% static 'img/titulo-sistema.png' %}" title="Lattes"></a>
+    </div> 
+
+    <br>
+
+    <div style="background-color:rgb(231, 231, 231); box-shadow: 0px 1px 25px grey" style="align-items: center;">
+        <div align='center' class="container-curriculum">  
+            <h4><i>Curriculum Vitae</i></h4>
+            <iframe src="https://onedrive.live.com/embed?cid=927F2662E1DB073C&resid=927F2662E1DB073C%215047&authkey=AL1CZ2Ewm7ELths&em=2" width="976" height="1000" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </div>
+
+    <br>
+
+</div> 
+
+{% endblock %}

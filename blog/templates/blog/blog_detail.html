@@ -1,0 +1,49 @@
+{% extends "blog/base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+
+{% include 'blog/navbar.html' %}
+
+<div class="container mx-10">
+
+    <div class="row">
+        
+        <div class="col-md-2"><p style="position: fixed; margin-top: 50px;"></p></div>
+    
+
+        <div class=col-md-8>
+            <br>
+            <h3>{{ post.title }} </h3>
+            <p><small> Criado em {{ post.created_at }} por <a href="{% url 'blog_autor' %}" target="_blank"><em>Robson Passos</em></a></small></p>
+            <p>{{ post.content | safe }} </p>
+
+            <div style="display:flex">
+            
+                {% for tag in post.tags.all %} 
+                    
+                    <form role='form' action="{% url 'tag' %}" method='GET'> 
+                        {% csrf_token %}
+                        <input type="submit" class="btn btn-sm btn-outline-secondary mr-1 py-0" style="font-size: 0.8em;" value="{{ tag }}" name="tag">
+                    </form>
+
+                {% endfor %}
+                <br>
+
+            </div>
+
+            <br>
+            <br>
+
+            {# {% include 'comments.html' with url=post.pk %} #}
+
+        </div>
+
+        <div class="col-md-2 mt-2"></div>
+    
+    </div>
+
+</div>
+
+{% endblock %}    
